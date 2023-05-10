@@ -3,6 +3,42 @@
   padding: 0;
 }
 
+.container {
+  display: flex;
+  height: 7vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: start;
+  background-color: grey;
+  color: white;
+  padding: 0 4vw;
+  gap: 1vw;
+}
+
+.navbar-logo {
+  display: flex;
+  height: 50%;
+  width: 200px;
+  align-items: center;
+  gap: 1vw;
+}
 .navbar-logo img {
-  width: 100px;
+  height: 5vh;
+  flex: 0;
+}
+.navbar-list ul {
+  list-style: none;
+  display: flex;
+  gap: 3vw;
+}
+
+.navbar-list ul li a {
+  text-decoration: none;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+.navbar-list ul li a:hover {
+  text-decoration: none;
+  color: bisque;
 }
