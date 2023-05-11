@@ -9,6 +9,9 @@ const cartItems = document.getElementById("cart-items");
 const cartCount = document.getElementById("cart-counter");
 const checkoutBtn = document.getElementById("btn-checkout");
 const checkoutBox = document.getElementById("checkout-container");
+const modalBox = document.querySelector(".modal-box");
+const totalFinal = document.getElementById("total-final");
+const layar = document.getElementById("layar");
 
 let counter = 0;
 let addCart = [...document.getElementsByClassName("btn-add-cart")];
@@ -42,7 +45,7 @@ for (let i = 0; i < addCart.length; i++) {
   let harga = addCart[i].parentElement.previousElementSibling.lastElementChild.innerText;
   let stock = addCart[i].previousElementSibling.firstElementChild.innerText;
   let id = card[i].id;
-  totalBayar = cartDB.totalBayar;
+
   // console.log(nama);
   addCart[i].addEventListener("click", function () {
     checkoutBox.style.display = "flex";
@@ -97,8 +100,8 @@ for (let i = 0; i < addCart.length; i++) {
       ambilHarga.innerText = `Rp ${cartDB[nama].total}`;
       ambilQty.innerText = `qty : ${cartDB[nama].qty}`;
     }
-    totalBayar += Number(harga);
-    document.getElementById("total").innerText = totalBayar;
+    cartDB.totalBayar += Number(harga);
+    document.getElementById("total").innerText = cartDB.totalBayar;
     addCart[i].previousElementSibling.firstElementChild.innerText = cartDB[nama].stock;
     cartCount.innerText = `${Number(cartCount.innerText) + 1}`;
   });
@@ -150,7 +153,10 @@ checkoutBtn.addEventListener("click", function () {
         delete cartDB[keys];
       }
     }
-    cartDB.totalBayar = 0;
+    modalBox.style.display = "flex";
+    totalFinal.innerText = cartDB.totalBayar;
+    layar.style.display = "block";
     e.stopPropagation();
   }, 4000);
 });
+console.log(cartDB.totalBayar);
