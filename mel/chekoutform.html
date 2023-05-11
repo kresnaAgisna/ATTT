@@ -1,0 +1,80 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout Form</title>
+    <link rel="stylesheet" href="checkoutform.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h2>Checkout Form</h2>
+      </div>
+      <div class="d-flex">
+        <form action="" method="">
+          <label>
+            <span class="fname"
+              >Nama Lengkap <span class="required">*</span></span
+            >
+            <input type="text" name="fname" />
+          </label>
+          <label>
+            <span class="lname">Alamat <span class="required">*</span></span>
+            <input type="text" name="lname" />
+          </label>
+          <label>
+            <span class="lname"
+              >Pilih Pengiriman <span class="required">*</span></span
+            >
+            <select name="choice">
+              <option value="first">JNE</option>
+              <option value="second" selected>J&T</option>
+              <option value="third">Sicepat</option>
+            </select>
+          </label>
+          <label>
+            <span>No Telepon <span class="required">*</span></span>
+            <input type="tel" name="city" />
+          </label>
+          <label>
+            <span>Email Address <span class="required">*</span></span>
+            <input type="email" name="city" />
+          </label>
+        </form>
+        <div class="Yorder">
+          <table>
+            <tr>
+              <th colspan="2">Orderan Mu</th>
+            </tr>
+            <tr>
+              <td>Nama Produk x 2(Qty)</td>
+              <td>80000</td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td>80000</td>
+            </tr>
+          </table>
+          <br />
+          <div>
+            <input type="radio" name="dbt" value="dbt" checked /> Direct Bank
+            Transfer
+          </div>
+          <p>Pembayaran langsung ke Bank kami tanpa melalui perantara.</p>
+          <div>
+            <input type="radio" name="dbt" value="cd" /> Cash on Delivery
+          </div>
+          <div>
+            <input type="radio" name="dbt" value="cd" /> E-Wallet
+            <span>
+              <img src="/img/logo-ewallet.jpg" alt="" width="50" />
+            </span>
+          </div>
+          <button type="button">Place Order</button>
+        </div>
+        <!-- Yorder -->
+      </div>
+    </div>
+  </body>
+</html>
