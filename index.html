@@ -25,6 +25,46 @@
     </div>
     <!-- navbar end -->
     <!-- main start -->
+    <div class="circle"></div>
+    <header>
+    </header>
+    <div class="content">
+      <div class="textBox">
+        <h2>Bukan hanya handphone bekas <br />tapi <span>Berkelas</span></h2>
+        <p>
+          Bring you the most authentic secondhand-phone in the GEN-Z era. Step
+          up your game change your phone change your life speed.
+        </p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="imgBox">
+        <img src=".img/ip14.png" class="handphone" />
+      </div>
+    </div>
+  </section>
+  <ul class="thumb">
+    <li>
+      <a href="#"
+        ><img
+          src=".img/huaweip60.png"
+          onclick="imgSlider('./huaweip60.png'); changeCircleColor('#ACB1D6')"
+      /></a>
+    </li>
+    <li>
+      <a href="#"
+        ><img
+          src=".img/s23ultra.avif"
+          onclick="imgSlider('./s23ultra.avif'); changeCircleColor('#DBDFEA')"
+      /></a>
+    </li>
+    <li>
+      <a href="#"
+        ><img
+          src=".img/ip13.png"
+          onclick="imgSlider('./ip13.png'); changeCircleColor('#FFEAD2')"
+      /></a>
+    </li>
+  </ul>
 
     <!-- main end -->
 
@@ -70,5 +110,14 @@
       </div>
     </footer>
     <script src="script.js"></script>
+    <script type="text/javascript">
+      function imgSlider(anything) {
+        document.querySelector(".handphone").src = anything;
+      }
+      function changeCircleColor(color) {
+        const circle = document.querySelector(".circle");
+        circle.style.background = color;
+      }
+    </script>
   </body>
 </html>
