@@ -7,6 +7,9 @@ const bag = document.getElementById("cart-bag");
 const popDown = document.getElementById("pop-down");
 const cartItems = document.getElementById("cart-items");
 const cartCount = document.getElementById("cart-counter");
+const checkoutBtn = document.getElementById("btn-checkout");
+const checkoutBox = document.getElementById("checkout-container");
+
 let counter = 0;
 let addCart = [...document.getElementsByClassName("btn-add-cart")];
 
@@ -23,22 +26,9 @@ const card = [
   { nama: "appa", harga: 2000000, stock: 30, id: "lima" },
 ];
 
-{
-  /* <div class="items" id="cart-items">
-//         <div class="btn-close">X</div>
-//         <div class="item-image"></div>
-//         <div class="item-text">
-//           <p class="nama">${e.parentElement.previousElementSibling.firstElementChild.innerText}</p>
-//           <p class="qty">
-//             qty : <span>2</span>
-//           </p>
-//           <p class="harga">
-//             Rp <span>${e.parentElement.previousElementSibling.lastElementChild.innerText}</span>
-//           </p>
-//         </div>
-//       </div> */
-}
-const cartDB = {};
+const cartDB = {
+  totalBayar: 0,
+};
 
 for (let i = 0; i < card.length; i++) {
   let { nama, harga, stock } = card[i];
@@ -52,8 +42,10 @@ for (let i = 0; i < addCart.length; i++) {
   let harga = addCart[i].parentElement.previousElementSibling.lastElementChild.innerText;
   let stock = addCart[i].previousElementSibling.firstElementChild.innerText;
   let id = card[i].id;
+  totalBayar = cartDB.totalBayar;
   // console.log(nama);
   addCart[i].addEventListener("click", function () {
+    checkoutBox.style.display = "flex";
     if (!cartDB[nama]) {
       cartDB[nama] = { harga, id, stock, qty: 0 };
       popDown.setAttribute(id, true);
@@ -89,7 +81,12 @@ for (let i = 0; i < addCart.length; i++) {
       itemText.appendChild(pHarga);
       pHarga.innerText = `Rp ${cartDB[nama].total}`;
 
+      btnClose.addEventListener("click", close);
+
       popDown.appendChild(divItems);
+      if (popDown.childElementCount > 4) {
+        divItems.style.display = "none";
+      }
     } else {
       cartDB[nama].stock -= 1;
       cartDB[nama].qty++;
@@ -100,7 +97,8 @@ for (let i = 0; i < addCart.length; i++) {
       ambilHarga.innerText = `Rp ${cartDB[nama].total}`;
       ambilQty.innerText = `qty : ${cartDB[nama].qty}`;
     }
-
+    totalBayar += Number(harga);
+    document.getElementById("total").innerText = totalBayar;
     addCart[i].previousElementSibling.firstElementChild.innerText = cartDB[nama].stock;
     cartCount.innerText = `${Number(cartCount.innerText) + 1}`;
   });
@@ -132,24 +130,27 @@ bag.addEventListener("click", function (e) {
   e.stopPropagation();
 });
 
-// add to cart
+// checkout button
 
-// addCart.forEach((e) => {
-//   console.log(e.previousElementSibling.firstElementChild.innerText);
+checkoutBtn.addEventListener("click", function () {
+  checkoutBtn.innerText = `Loading`;
+  checkoutBtn.classList.toggle("kedip-kedip");
 
-//   e.addEventListener("click", function () {
-//     popDown.innerHTML += `<div class="items" id="cart-items">
-//         <div class="btn-close">X</div>
-//         <div class="item-image"></div>
-//         <div class="item-text">
-//           <p class="nama">${e.parentElement.previousElementSibling.firstElementChild.innerText}</p>
-//           <p class="qty">
-//             qty : <span>2</span>
-//           </p>
-//           <p class="harga">
-//             Rp <span>${e.parentElement.previousElementSibling.lastElementChild.innerText}</span>
-//           </p>
-//         </div>
-//       </div>`;
-//   });
-// });
+  setTimeout(() => {
+    checkoutBtn.classList.toggle("kedip-kedip");
+    checkoutBtn.innerText = `Checkout`;
+    popDown.style.opacity = 1;
+    popDown.classList.toggle("display-none");
+    while (popDown.childElementCount > 2) {
+      popDown.children[2].remove();
+    }
+    checkoutBox.style.display = "none";
+    for (let keys in cartDB) {
+      if (keys !== "totalBayar") {
+        delete cartDB[keys];
+      }
+    }
+    cartDB.totalBayar = 0;
+    e.stopPropagation();
+  }, 4000);
+});
