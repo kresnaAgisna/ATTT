@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
 
+    <link rel="stylesheet" href="style.css" />
     <!-- google fonts -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap" rel="stylesheet" />
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   </head>
   <body>
     <!-- navbar start -->
-    <div class="navbar-container" id="hitam">
       <div class="navbar-logo">
         <img src="img/logo.png" alt="" />
         <p>ATTT</p>
@@ -27,6 +28,7 @@
           <li><a href="">Shop</a></li>
         </ul>
       </div>
+      <div id="nav-cart"><i class="bi bi-bag"></i></div>
     </div>
     <!-- navbar end -->
     <!-- main start -->
@@ -36,28 +38,132 @@
         <div class="textBox">
           <h2>Bukan hanya handphone bekas <br />tapi <span id="berkelas">Berkelas</span></h2>
           <p>Bring you the most authentic secondhand-phone in the GEN-Z era. Step up your game change your phone change your life speed.</p>
-          <a href="#">Shop Now</a>
+          <a href="#shop">Shop Now</a>
         </div>
         <div class="imgBox">
           <img src="img/ip14.png" class="handphone" />
         </div>
       </div>
+      <ul class="thumb">
+        <li>
+          <a><img src="img/huaweip60.png" onclick="imgSlider('img/huaweip60.png'); changeCircleColor('#ACB1D6')" /></a>
+        </li>
+        <li>
+          <a><img src="img/s23ultra.avif" onclick="imgSlider('img/s23ultra.avif'); changeCircleColor('#DBDFEA')" /></a>
+        </li>
+        <li>
+          <a><img src="img/ip13.png" onclick="imgSlider('img/ip13.png'); changeCircleColor('#FFEAD2')" /></a>
+        </li>
+      </ul>
     </section>
-    <ul class="thumb">
-      <li>
-        <a><img src="img/huaweip60.png" onclick="imgSlider('img/huaweip60.png'); changeCircleColor('#ACB1D6')" /></a>
-      </li>
-      <li>
-        <a><img src="img/s23ultra.avif" onclick="imgSlider('img/s23ultra.avif'); changeCircleColor('#DBDFEA')" /></a>
-      </li>
-      <li>
-        <a><img src="img/ip13.png" onclick="imgSlider('img/ip13.png'); changeCircleColor('#FFEAD2')" /></a>
-      </li>
-    </ul>
 
     <!-- main end -->
 
-    <footer>
+    <!-- shop-start -->
+
+    <div class="shop-container" id="shop">
+      <div class="cards">
+        <h1>Shop Now :</h1>
+        <div class="card">
+          <div class="card-image">
+            <img src="img/pecah.png" alt="HP RUSAK" />
+          </div>
+          <div class="card-description">
+            <p class="harga">Rp 50.000</p>
+            <p class="lokasi">Jakarta</p>
+          </div>
+          <div class="card-stock">
+            <p>stock : <span>90</span></p>
+            <div class="btn-add-cart">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 4C11.4477 4 11 4.44772 11 5V11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H11V19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19V13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11H13V5C13 4.44772 12.5523 4 12 4Z"
+                  fill="black" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="img/pecah.png" alt="HP RUSAK" />
+          </div>
+          <div class="card-description">
+            <p class="harga">Rp 50.000</p>
+            <p class="lokasi">Jakarta</p>
+          </div>
+          <div class="card-stock">
+            <p>stock : <span>90</span></p>
+            <div class="btn-add-cart">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 4C11.4477 4 11 4.44772 11 5V11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H11V19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19V13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11H13V5C13 4.44772 12.5523 4 12 4Z"
+                  fill="black" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="img/pecah.png" alt="HP RUSAK" />
+          </div>
+          <div class="card-description">
+            <p class="harga">Rp 50.000</p>
+            <p class="lokasi">Jakarta</p>
+          </div>
+          <div class="card-stock">
+            <p>stock : <span>90</span></p>
+            <div class="btn-add-cart">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 4C11.4477 4 11 4.44772 11 5V11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H11V19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19V13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11H13V5C13 4.44772 12.5523 4 12 4Z"
+                  fill="black" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="img/pecah.png" alt="HP RUSAK" />
+          </div>
+          <div class="card-description">
+            <p class="harga">Rp 50.000</p>
+            <p class="lokasi">Jakarta</p>
+          </div>
+          <div class="card-stock">
+            <p>stock : <span>90</span></p>
+            <div class="btn-add-cart">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 4C11.4477 4 11 4.44772 11 5V11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H11V19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19V13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11H13V5C13 4.44772 12.5523 4 12 4Z"
+                  fill="black" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="img/pecah.png" alt="HP RUSAK" />
+          </div>
+          <div class="card-description">
+            <p class="harga">Rp 50.000</p>
+            <p class="lokasi">Jakarta</p>
+          </div>
+          <div class="card-stock">
+            <p>stock : <span>90</span></p>
+            <div class="btn-add-cart">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 4C11.4477 4 11 4.44772 11 5V11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H11V19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19V13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11H13V5C13 4.44772 12.5523 4 12 4Z"
+                  fill="black" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- shop end -->
+
+    <footer id="contact">
       <div class="footer-boxes">
         <div class="footer-box">
           <ul>
@@ -89,7 +195,6 @@
         <div class="footer-box">
           <ul>
             <h5>About us</h5>
-            <li>Goal</li>
             <li>Journey</li>
             <li>Offices</li>
             <li>Achievement</li>
@@ -99,18 +204,5 @@
       </div>
     </footer>
     <script src="script.js"></script>
-    <script type="text/javascript">
-      function imgSlider(anything) {
-        document.querySelector(".handphone").src = anything;
-      }
-      function changeCircleColor(color) {
-        const circle = document.querySelector(".circle");
-        const berkelas = document.getElementById("berkelas");
-        const shopNow = document.querySelector(".textBox a");
-        circle.style.background = color;
-        shopNow.style.background = color;
-        berkelas.style.color = color;
-      }
-    </script>
   </body>
 </html>
