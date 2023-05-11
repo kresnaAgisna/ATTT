@@ -6,54 +6,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+
+    <!-- google fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap" rel="stylesheet" />
   </head>
   <body>
     <!-- navbar start -->
-    <div class="navbar container" id="hitam">
+    <div class="navbar-container" id="hitam">
       <div class="navbar-logo">
         <img src="img/logo.png" alt="" />
         <p>ATTT</p>
       </div>
+      <div class="navbar-list">
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="">Shop</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- navbar end -->
+    <!-- main start -->
+    <section>
+      <div class="circle"></div>
+      <div class="content">
+        <div class="textBox">
+          <h2>Bukan hanya handphone bekas <br />tapi <span id="berkelas">Berkelas</span></h2>
+          <p>Bring you the most authentic secondhand-phone in the GEN-Z era. Step up your game change your phone change your life speed.</p>
+          <a href="#">Shop Now</a>
+        </div>
+        <div class="imgBox">
+          <img src="img/ip14.png" class="handphone" />
+        </div>
+      </div>
+    </section>
+    <ul class="thumb">
+      <li>
+        <a><img src="img/huaweip60.png" onclick="imgSlider('img/huaweip60.png'); changeCircleColor('#ACB1D6')" /></a>
+      </li>
+      <li>
+        <a><img src="img/s23ultra.avif" onclick="imgSlider('img/s23ultra.avif'); changeCircleColor('#DBDFEA')" /></a>
+      </li>
+      <li>
+        <a><img src="img/ip13.png" onclick="imgSlider('img/ip13.png'); changeCircleColor('#FFEAD2')" /></a>
+      </li>
+    </ul>
 
     <!-- main end -->
 
     <footer>
       <div class="footer-boxes">
-          <div class="footer-box">
-              <ul> <h5>Payment</h5>
-                  <li>Bank</li>
-                  <li>E-wallet</li>
-                  <li>Credit</li>
-                  <li>Cash on delivery</li>
-              </ul>
-          </div>
-          <div class="footer-box">
-              <ul> <h5>Contact</h5>
-                  <li>0812-3456-7890</li>
-                  <li>021-777-888</li>
-                  <li>atnttsupport@gmail.com</li>
-                  <li>Live chat on website</li>
-              </ul>
-          </div>
-          <div class="footer-box">
-              <ul> <h5>Find us</h5>
-                  <li><a href="https://www.instagram.com/">Instagram</a></li>
-                  <li><a href="https://www.facebook.com/">Facebook</a></li>
-                  <li><a href="https://www.shopee.com/">Shopee</a></li>
-                  <li><a href="https://www.tokopedia.com/">Tokopedia</a></li>
-              </ul>
-          </div>
-          <div class="footer-box">
-              <ul> <h5>About us</h5>
-                  <li>Goal</li>
-                  <li>Journey</li>
-                  <li>Offices</li>
-                  <li>Achievement</li>
-                  <li>Terms & condition</li>
-              </ul>
-          </div>
+        <div class="footer-box">
+          <ul>
+            <h5>Payment</h5>
+            <li>Bank</li>
+            <li>E-wallet</li>
+            <li>Credit</li>
+            <li>Cash on delivery</li>
+          </ul>
+        </div>
+        <div class="footer-box">
+          <ul>
+            <h5>Contact</h5>
+            <li>0812-3456-7890</li>
+            <li>021-777-888</li>
+            <li>atnttsupport@gmail.com</li>
+            <li>Live chat on website</li>
+          </ul>
+        </div>
+        <div class="footer-box">
+          <ul>
+            <h5>Find us</h5>
+            <li><a href="https://www.instagram.com/">Instagram</a></li>
+            <li><a href="https://www.facebook.com/">Facebook</a></li>
+            <li><a href="https://www.shopee.com/">Shopee</a></li>
+            <li><a href="https://www.tokopedia.com/">Tokopedia</a></li>
+          </ul>
+        </div>
+        <div class="footer-box">
+          <ul>
+            <h5>About us</h5>
+            <li>Goal</li>
+            <li>Journey</li>
+            <li>Offices</li>
+            <li>Achievement</li>
+            <li>Terms & condition</li>
+          </ul>
+        </div>
       </div>
-      </footer>
+    </footer>
     <script src="script.js"></script>
+    <script type="text/javascript">
+      function imgSlider(anything) {
+        document.querySelector(".handphone").src = anything;
+      }
+      function changeCircleColor(color) {
+        const circle = document.querySelector(".circle");
+        const berkelas = document.getElementById("berkelas");
+        const shopNow = document.querySelector(".textBox a");
+        circle.style.background = color;
+        shopNow.style.background = color;
+        berkelas.style.color = color;
+      }
+    </script>
   </body>
 </html>

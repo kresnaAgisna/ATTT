@@ -1,0 +1,27 @@
+
+.footer-boxes{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.footer-box ul li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    font-size: small;
+    color: dimgray;
+}
+
+a {
+    text-decoration: none;
+    color: dimgray;
+}
+
+.footer-box ul li a:hover {
+    color: blueviolet;
+}
+
+.footer-box ul li:hover {
+    color: blueviolet;
+    cursor: pointer
+}

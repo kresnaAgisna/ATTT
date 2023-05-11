@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATNTT Landing Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <div class="circle"></div>
+      <header></header>
+      <div class="content">
+        <div class="textBox">
+          <h2>Bukan hanya handphone bekas <br />tapi <span>Berkelas</span></h2>
+          <p>
+            Bring you the most authentic secondhand-phone in the GEN-Z era. Step
+            up your game change your phone change your life speed.
+          </p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="imgBox">
+          <img src="./ip14.png" class="handphone" />
+        </div>
+      </div>
+    </section>
+    <ul class="thumb">
+      <li>
+        <a href="#"
+          ><img
+            src="./huaweip60.png"
+            onclick="imgSlider('./huaweip60.png'); changeCircleColor('#ACB1D6')"
+        /></a>
+      </li>
+      <li>
+        <a href="#"
+          ><img
+            src="./s23ultra.avif"
+            onclick="imgSlider('./s23ultra.avif'); changeCircleColor('#DBDFEA')"
+        /></a>
+      </li>
+      <li>
+        <a href="#"
+          ><img
+            src="./ip13.png"
+            onclick="imgSlider('./ip13.png'); changeCircleColor('#FFEAD2')"
+        /></a>
+      </li>
+    </ul>
+    <script type="text/javascript">
+      function imgSlider(anything) {
+        document.querySelector(".handphone").src = anything;
+      }
+      function changeCircleColor(color) {
+        const circle = document.querySelector(".circle");
+        circle.style.background = color;
+      }
+    </script>
+  </body>
+</html>
