@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+
+    <!-- google fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap" rel="stylesheet" />
   </head>
   <body>
     <!-- navbar start -->
@@ -25,46 +31,30 @@
     </div>
     <!-- navbar end -->
     <!-- main start -->
-    <div class="circle"></div>
-    <header>
-    </header>
-    <div class="content">
-      <div class="textBox">
-        <h2>Bukan hanya handphone bekas <br />tapi <span>Berkelas</span></h2>
-        <p>
-          Bring you the most authentic secondhand-phone in the GEN-Z era. Step
-          up your game change your phone change your life speed.
-        </p>
-        <a href="#">Learn More</a>
+    <section>
+      <div class="circle"></div>
+      <div class="content">
+        <div class="textBox">
+          <h2>Bukan hanya handphone bekas <br />tapi <span id="berkelas">Berkelas</span></h2>
+          <p>Bring you the most authentic secondhand-phone in the GEN-Z era. Step up your game change your phone change your life speed.</p>
+          <a href="#">Shop Now</a>
+        </div>
+        <div class="imgBox">
+          <img src="img/ip14.png" class="handphone" />
+        </div>
       </div>
-      <div class="imgBox">
-        <img src=".img/ip14.png" class="handphone" />
-      </div>
-    </div>
-  </section>
-  <ul class="thumb">
-    <li>
-      <a href="#"
-        ><img
-          src=".img/huaweip60.png"
-          onclick="imgSlider('./huaweip60.png'); changeCircleColor('#ACB1D6')"
-      /></a>
-    </li>
-    <li>
-      <a href="#"
-        ><img
-          src=".img/s23ultra.avif"
-          onclick="imgSlider('./s23ultra.avif'); changeCircleColor('#DBDFEA')"
-      /></a>
-    </li>
-    <li>
-      <a href="#"
-        ><img
-          src=".img/ip13.png"
-          onclick="imgSlider('./ip13.png'); changeCircleColor('#FFEAD2')"
-      /></a>
-    </li>
-  </ul>
+    </section>
+    <ul class="thumb">
+      <li>
+        <a><img src="img/huaweip60.png" onclick="imgSlider('img/huaweip60.png'); changeCircleColor('#ACB1D6')" /></a>
+      </li>
+      <li>
+        <a><img src="img/s23ultra.avif" onclick="imgSlider('img/s23ultra.avif'); changeCircleColor('#DBDFEA')" /></a>
+      </li>
+      <li>
+        <a><img src="img/ip13.png" onclick="imgSlider('img/ip13.png'); changeCircleColor('#FFEAD2')" /></a>
+      </li>
+    </ul>
 
     <!-- main end -->
 
@@ -116,7 +106,11 @@
       }
       function changeCircleColor(color) {
         const circle = document.querySelector(".circle");
+        const berkelas = document.getElementById("berkelas");
+        const shopNow = document.querySelector(".textBox a");
         circle.style.background = color;
+        shopNow.style.background = color;
+        berkelas.style.color = color;
       }
     </script>
   </body>
